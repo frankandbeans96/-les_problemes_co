@@ -30,6 +30,7 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
