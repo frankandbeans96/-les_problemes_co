@@ -2,8 +2,10 @@
 <hr>
 <div>
   <% Article.all.each do |article| %>
+  <div class="card my-4">
     <%= cl_image_tag article.photo.key, height: 300, width: 400, crop: :fill %>
     <%= link_to "#{article.title.capitalize}", article_path(article) %>
+  </div>
   <% end %>
 </div>
 

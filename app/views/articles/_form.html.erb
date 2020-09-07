@@ -2,7 +2,11 @@
 <%= simple_form_for(@article) do |f| %>
 
   <%= f.input :photo, as: :file %>
-  <%= f.input :category_tag_list, label: "Ajouter une ou plusieurs catégories", input_html: {class: "select2", multiple: "multiple" }, collection: Article.all.map(&:category_tag_list).flatten.uniq %>
+  <%= f.input :category_list, label: "Ajouter une ou plusieurs catégories", input_html: {class: "select2-categories", multiple: "multiple" }, collection: Article.all.map(&:category_list).flatten.uniq %>
+
+  <div class="form-inputs">
+    <%= f.input :foreword %>
+  </div>
 
   <div class="form-inputs">
     <%= f.input :title %>
