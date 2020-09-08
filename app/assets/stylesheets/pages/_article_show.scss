@@ -1,0 +1,60 @@
+#article_rich_body {
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.title-container {
+  text-align: center;
+
+  h4 {
+    font-weight: 300;
+    margin: 0px 5vw;
+  }
+
+  h1 {
+    margin: 4vh 0px;
+    font-size: 3rem;
+  }
+
+  a {
+    color: $pink;
+    font-family: $headers-font;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.article-main-img {
+  margin-top: 4vh;
+  display: flex;
+  height: 45vh;
+
+  img {
+    object-fit: cover;
+    width: 100% !important
+  }
+}
+
+.article-body-container {
+  margin: auto;
+  text-align: justify;
+  margin-top: 5vh;
+
+  h1 {
+    b, strong {
+      color: $pink;
+    }
+  }
+
+  a {
+    color: $pink;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
