@@ -1,6 +1,8 @@
 .navbar-main {
   justify-content: space-between;
   background: white;
+  font-family: $headers-font;
+  padding: 1rem;
 }
 
 .navbar-main .navbar-collapse {
@@ -8,7 +10,7 @@
 }
 
 .navbar-main .navbar-brand img {
-  width: 40px;
+  height: 4.5rem;
 }
 
 .navbar-logo {
@@ -18,7 +20,6 @@
     margin: 0;
     color: $gray;
     font-size: 0.8rem;
-    font-style: italic;
   }
 }
 
@@ -28,7 +29,7 @@
 
   .navbar-titles {
     color: $pink;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 0px 5px;
   }
 }

@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-main">
   <div class="navbar-logo">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% key = "mx1t9zdgzglh6ggga5nf" %>
+      <%= cl_image_tag key, alt: "Les Problèmes Logo" %>
     <% end %>
     <p>Télé-réalité, genre & sexualité</p>
   </div>
