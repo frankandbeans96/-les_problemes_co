@@ -8,8 +8,19 @@
   </div>
 
   <div class="navbar-right">
+
     <%= link_to "Acceuil", root_path, class:"navbar-titles"  %>
-    <%= link_to "Articles", root_path, class:"navbar-titles"  %>
+    <div class="dropdown dropdown-navbar">
+      <button class="btn btn-secondary navbar-menu-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Articles
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% categories =  Article.all.map(&:category_list).flatten.uniq %>
+        <% categories.each do |category| %>
+          <%= link_to "#{category}", articles_path(category: category) %>
+        <% end %>
+      </div>
+    </div>
     <%= link_to "Manifeste", root_path, class:"navbar-titles"  %>
     <%= link_to "Contact", root_path, class:"navbar-titles"  %>
     <% if user_signed_in? %>
