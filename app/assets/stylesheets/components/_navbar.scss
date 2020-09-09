@@ -98,3 +98,37 @@ button.navbar-menu-dropdown {
   margin: 0px 5px;
 }
 
+.btn-dropdown {
+    color: $pink;
+
+  &:hover {
+    background: none;
+    border: none;
+    color: $pink;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    background: none;
+    border: none;
+    color: $pink;
+    text-decoration: underline;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    background: none !important;
+    border: none !important;
+    color: $pink !important;
+    text-decoration: underline !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.dropdown-item:hover {
+  background: none;
+  text-decoration: underline;
+
+}

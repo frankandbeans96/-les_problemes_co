@@ -1,3 +1,6 @@
+<%= link_to :back, class:"return-btn" do %>
+  <i class="fas fa-arrow-left"></i> Retour
+<% end %>
 <div class="title-container">
   <%= link_to "#{@article.category_list.first}", articles_path(category: @article.category_list.first) %>
 
@@ -13,5 +16,30 @@
   <p><%= @article.rich_body %></p>
 </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Modifier', edit_article_path(@article), class:"btn btn-primary" %>
+<% end %>
+
+
+<div class="other-articles">
+  <hr>
+  <div class="d-flex justify-content-between">
+    <div class="next-and-previous-articles text-left">
+      <% if @article.prev.present? %>
+        <%= link_to article_path(@article.prev), class:"d-flex" do %>
+          <div><i class="fas fa-arrow-left mr-2"></i></div>
+          <div><%= @article.prev.title %></div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="next-and-previous-articles text-right">
+      <% if @article.next.present? %>
+        <%= link_to article_path(@article.next), class: "d-flex" do %>
+          <div><%= @article.next.title %></div>
+          <div><i class="fas fa-arrow-right ml-2"></i></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+</div>
