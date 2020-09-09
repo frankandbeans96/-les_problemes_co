@@ -34,7 +34,7 @@
   }
 
   .navbar-menu-dropdown {
-     background: none !important;
+    background: none !important;
     border: none !important;
     color: $pink !important;
     outline: none !important;
@@ -42,7 +42,10 @@
   }
 }
 
-.dropdown-navbar button {
+.navbar-right button {
+  a {
+    color: $pink;
+  }
 
   &:hover {
     background: none;
@@ -73,5 +76,25 @@
 .dropdown-menu.show {
   display: flex;
   flex-direction: column;
+  background: black;
+
+  a {
+    color: white;
+    font-family: $headers-font;
+    font-size: 0.8rem;
+    padding: 4px 20px;
+  }
+}
+
+.dropdown-menu {
+  border-radius: 6px;
+}
+
+button.navbar-menu-dropdown {
+  padding: 0px 4px 0px 0px;
+}
+
+.btn-group {
+  margin: 0px 5px;
 }
 
