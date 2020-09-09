@@ -74,7 +74,7 @@
 }
 
 .dropdown-menu.show {
-  display: none;
+  display: flex;
   flex-direction: column;
   background: black;
 
@@ -88,9 +88,6 @@
 
 .dropdown-menu {
   border-radius: 6px;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.15s linear, transform 0.15s linear;
 }
 
 button.navbar-menu-dropdown {
@@ -99,11 +96,5 @@ button.navbar-menu-dropdown {
 
 .btn-group {
   margin: 0px 5px;
-
-  &:hover {
-    .dropdown-menu.show {
-      display: flex;
-    }
-  }
 }
 

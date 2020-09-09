@@ -14,9 +14,8 @@
     <div class="btn-group">
       <button type="button" class="navbar-menu-dropdown "><%= link_to "Articles", articles_path %></button>
       <button type="button" id="navbar-arrow-dropdown" class="navbar-menu-dropdown dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
       </button>
-      <div id="navbar-menu-dropdown" class="dropdown-menu dropdown-menu-right show">
+      <div id="navbar-menu-dropdown" class="dropdown-menu dropdown-menu-right">
         <% categories =  Article.all.map(&:category_list).flatten.uniq %>
         <% categories.each do |category| %>
           <%= link_to "#{category}", articles_path(category: category) %>
