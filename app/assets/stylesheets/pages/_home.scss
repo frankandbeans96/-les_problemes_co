@@ -2,3 +2,10 @@
 body {
   background: white;
 }
+
+a {
+  color: black;
+  &:hover {
+    color: black;
+  }
+}

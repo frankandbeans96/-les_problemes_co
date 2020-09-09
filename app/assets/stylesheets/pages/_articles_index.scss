@@ -1,0 +1,23 @@
+.coms-and-date {
+  color: $gray;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  font-size: 0.8rem;
+}
+
+a.category-link {
+  color: $pink;
+  font-family: $headers-font;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+.category-title {
+  color: $pink;
+}

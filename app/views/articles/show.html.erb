@@ -1,5 +1,5 @@
 <div class="title-container">
-  <%= link_to "#{@article.categories.first}", articles_path %>
+  <%= link_to "#{@article.category_list.first}", articles_path(category: @article.category_list.first) %>
 
   <h1><%= @article.title %></h1>
   <h4><%= @article.foreword %></h4>
