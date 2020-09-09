@@ -9,7 +9,10 @@ a {
     color: black;
   }
 }
-
-.fa-arrow-left {
-  color: $pink;
+.return-btn {
+  font-size: 0.8rem;
+  font-family: $headers-font;
+  .fa-arrow-left {
+    color: $pink;
+  }
 }

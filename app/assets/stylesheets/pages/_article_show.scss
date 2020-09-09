@@ -44,6 +44,7 @@
   margin-top: 5vh;
 
   h1 {
+    text-align: right;
     b, strong {
       color: $pink;
     }
@@ -56,5 +57,16 @@
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.other-articles {
+  a {
+    color: $pink;
+    font-family: $headers-font;
+  }
+
+  .next-and-previous-articles {
+    width: 40%;
   }
 }

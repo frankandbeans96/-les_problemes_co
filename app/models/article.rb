@@ -4,4 +4,12 @@ class Article < ApplicationRecord
   acts_as_taggable_on :categories
 
   validates :title, :photo, :rich_body, presence: true
+
+  def next
+    Article.where("id > ?", id).first
+  end
+
+  def prev
+    Article.where("id < ?", id).last
+  end
 end
