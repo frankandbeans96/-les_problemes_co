@@ -1,11 +1,11 @@
 <div class="title-container">
-  <%= link_to "#{@article.categories.first}", articles_path %>
+  <%= link_to "#{@article.category_list.first}", articles_path(category: @article.category_list.first) %>
 
   <h1><%= @article.title %></h1>
   <h4><%= @article.foreword %></h4>
 </div>
 
-<div class="article-main-img col-sm-12 col-md-9 col-lg-9 mx-auto">
+<div class="article-main-img col-sm-12 col-md-10 col-lg-10 mx-auto">
   <%= cl_image_tag @article.photo.key, crop: :fill, class:"mx-auto" %>
 </div>
 
