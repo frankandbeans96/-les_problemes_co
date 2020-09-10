@@ -1,7 +1,7 @@
 <% if params[:category].present? %>
   <div class="d-flex mx-auto mb-5">
-    <h2 class="category-title mr-2">Catégorie:</h2>
-    <h2><%= params[:category].capitalize %></h2>
+    <h5 class="category-title mr-2">CATÉGORIE:</h5>
+    <h5><%= params[:category].upcase %></h5>
   </div>
 
 <% end %>
@@ -17,7 +17,7 @@
       <p><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y')%> </p>
       <p><i class="far fa-comment-alt"></i> Aucun commentaire</p>
     </div>
-    <p class="text-justify"><%= article.foreword %></p>
+    <p class="text-justify mt-3"><%= article.foreword %></p>
   </div>
 <hr class="mt-5">
 </div>
