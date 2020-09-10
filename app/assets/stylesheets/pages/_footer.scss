@@ -1,0 +1,15 @@
+footer {
+  padding: 5vh 0vh;
+  border-top: 1px solid #dbdbdb;
+  margin-top: 15vh;
+
+  .social-media-footer {
+    font-size: 1.2rem;
+
+    a:hover {
+      text-decoration: none;
+      color: $pink;
+    }
+
+  }
+}
