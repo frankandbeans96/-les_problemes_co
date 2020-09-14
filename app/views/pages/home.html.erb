@@ -20,11 +20,13 @@
       <% if Article.tagged_with(category).length < 2 %>
         <% Article.tagged_with(category).each do |article| %>
           <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
+          <p class="article-date mb-1 mt-0"><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y') %></p>
           <p class="pr-3"><%= article.foreword %></p>
         <% end %>
       <% else %>
         <% Article.tagged_with(category).take(2).each do |article| %>
           <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
+          <p class="article-date mb-1 mt-0"><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y') %></p>
           <p class="pr-3"><%= article.foreword %></p>
         <% end %>
       <% end %>
@@ -36,4 +38,7 @@
       <hr>
     </div>
   <% end %>
+</div>
+<div class="col-12 text-center mt-3">
+  <%= link_to "TOUS LES ARTICLES",  articles_path, class:"btn btn-primary carousel-btn btn-lg" %>
 </div>

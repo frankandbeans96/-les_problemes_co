@@ -34,6 +34,12 @@ a {
     p {
       text-align: justify;
     }
+
+    .article-date {
+      font-size: 0.8rem;
+      color: $gray;
+      font-style: italic;
+    }
   }
 }
 
@@ -141,7 +147,7 @@ a {
     }
   }
 }
-@media (max-width: 576px), (max-height: 812px) {
+@media (max-width: 576px), (max-height: 576px) {
   .slick-prev {
     display: none !important;
   }
