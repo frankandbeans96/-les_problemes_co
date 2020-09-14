@@ -9,12 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container col-sm-12 col-md-9 col-lg-7">
+
+    <% if !current_page?(home_path) %>
+      <div class="container col-sm-12 col-md-9 col-lg-7">
+    <% end %>
       <%= yield %>
     </div>
 

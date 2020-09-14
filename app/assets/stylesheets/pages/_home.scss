@@ -16,3 +16,61 @@ a {
     color: $pink;
   }
 }
+
+.home-carousel {
+  img {
+    height: 55vh;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.slick-next {
+  right: 45px;
+  .fa-angle-right {
+    color: white;
+    opacity: 0.8;
+    font-size: 2.5rem;
+    z-index: 1000;
+  }
+}
+
+.slick-prev {
+  left: 45px;
+  z-index: 1000;
+  .fa-angle-left {
+    color: white;
+    opacity: 0.8;
+    font-size: 2.5rem;
+    z-index: 1000;
+  }
+}
+
+
+.slick-next:before {
+  content: "";
+}
+
+.slick-prev:before {
+  content: "";
+}
+
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-next {
+    display: none !important;
+  }
+}
+
+
+
+

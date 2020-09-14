@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/manifeste', to: 'pages#manifeste', as: :manifeste
   get '/contact', to: 'pages#contact', as: :contact
+  get '/home', to: 'pages#home', as: :home
 
 
 

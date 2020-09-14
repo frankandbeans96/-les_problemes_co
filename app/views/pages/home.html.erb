@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-carousel">
+  <% Article.all.each do |article| %>
+    <div><%= cl_image_tag article.photo.key, alt: "#{article.title} cover photo" %></div>
+  <% end %>
+</div>
