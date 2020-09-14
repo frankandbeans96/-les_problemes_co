@@ -1,0 +1,6 @@
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.input :name, label: "Nom et Prénom" %>
+  <%= f.input :email, label: "Adresse email" %>
+  <%= f.input :message, as: :text, label: "Votre message" %>
+  <%= f.submit "ENVOYER", class:"btn btn-primary carousel-btn" %>
+<% end %>

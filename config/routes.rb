@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :articles
 
+  resources :contacts, only: [:new, :create]
+
   get '/manifeste', to: 'pages#manifeste', as: :manifeste
-  get '/contact', to: 'pages#contact', as: :contact
+  # get '/contact', to: 'pages#contact', as: :contact
 
 
 
