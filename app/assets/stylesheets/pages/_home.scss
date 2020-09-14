@@ -9,6 +9,40 @@ a {
     color: black;
   }
 }
+
+.homepage-articles-container {
+  margin-top: 60px;
+
+  .home-category-articles {
+    a.category-name {
+      color: $pink;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: bold;
+      font-family: $headers-font;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+
+    a.title-name {
+      color: $purple;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .article-date {
+      font-size: 0.8rem;
+      color: $gray;
+      font-style: italic;
+    }
+  }
+}
+
 .return-btn {
   font-size: 0.8rem;
   font-family: $headers-font;
@@ -16,3 +50,121 @@ a {
     color: $pink;
   }
 }
+
+.home-carousel {
+  width: 95vw;
+  margin: auto;
+
+  .article-carousel {
+    height: 70vh;
+    width: 100%;
+    background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+  }
+
+  .article-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 75%;
+
+    a {
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.slick-next {
+  right: 45px;
+  .fa-angle-right {
+    color: white;
+    opacity: 0.8;
+    font-size: 2.5rem;
+    z-index: 1000;
+  }
+}
+
+.slick-prev {
+  left: 45px;
+  z-index: 1000;
+  .fa-angle-left {
+    color: white;
+    opacity: 0.8;
+    font-size: 2.5rem;
+    z-index: 1000;
+  }
+}
+
+
+.slick-next:before {
+  content: "";
+}
+
+.slick-prev:before {
+  content: "";
+}
+
+.slick-dots li button:before {
+  font-size: 30px;
+}
+
+.article-image-carousel {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+.carousel-btn {
+  font-family: $headers-font;
+  border: none;
+  letter-spacing: 1px;
+  font-weight: 300;
+
+  &:hover {
+    text-decoration: underline;
+    background: $pink !important;
+  }
+}
+
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+   .article-text {
+    h1 {
+      text-align: center;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+@media (max-width: 576px), (max-height: 576px) {
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-next {
+    display: none !important;
+  }
+
+  .article-text {
+    h1 {
+      text-align: center;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+
+
+
+

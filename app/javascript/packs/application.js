@@ -24,13 +24,16 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'slick-carousel/slick/slick';
 
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
+import { slickCarousel } from '../components/slick_carousel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
+  slickCarousel();
 });
 
 require("trix")
