@@ -7,9 +7,6 @@ class PagesController < ApplicationController
   def manifeste
   end
 
-  def contact
-  end
-
   def home
   end
 end

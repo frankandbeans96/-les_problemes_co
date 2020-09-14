@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   get '/manifeste', to: 'pages#manifeste', as: :manifeste
-  # get '/contact', to: 'pages#contact', as: :contact
 
 
 
