@@ -21,13 +21,17 @@
         <% Article.tagged_with(category).each do |article| %>
           <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
           <p class="article-date mb-1 mt-0"><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y') %></p>
-          <p class="pr-3"><%= article.foreword %></p>
+          <div class="article-description mb-3">
+            <p class="pr-3 mb-0"><%= article.foreword %></p>
+          </div>
         <% end %>
       <% else %>
         <% Article.tagged_with(category).take(2).each do |article| %>
           <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
           <p class="article-date mb-1 mt-0"><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y') %></p>
-          <p class="pr-3"><%= article.foreword %></p>
+          <div class="article-description mb-3">
+            <p class="pr-3 mb-0"><%= article.foreword %></p>
+          </div>
         <% end %>
       <% end %>
       <% if Article.tagged_with(category).length > 2 %>
