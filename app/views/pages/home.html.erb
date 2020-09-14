@@ -13,21 +13,27 @@
 
 </div>
 
-<div class="d-flex row col-sm-12 col-md-11 col-lg-11 mx-auto">
-  <div class="home-category-articles col-sm-12 col-md-6 col-lg-4 ">
-    <h1>Hello son</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-  </div>
-  <div class="home-category-articles col-sm-12 col-md-6 col-lg-4 ">
-    <h1>Hello son</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-  </div>
-  <div class="home-category-articles col-sm-12 col-md-6 col-lg-4 ">
-    <h1>Hello son</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam illum iusto, consequuntur sint, ad commodi, nostrum, minus voluptate obcaecati explicabo provident numquam saepe.</p>
-  </div>
+<div class="homepage-articles-container d-flex row col-sm-12 col-md-11 col-lg-11 mx-auto">
+  <% ActsAsTaggableOn::Tag.most_used(3).each do |category| %>
+    <div class="home-category-articles col-sm-12 col-md-6 col-lg-4 ">
+      <%= link_to "#{category.name.titleize}", articles_path(category: category.name), class:"category-name"  %>
+      <% if Article.tagged_with(category).length < 2 %>
+        <% Article.tagged_with(category).each do |article| %>
+          <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
+          <p class="pr-3"><%= article.foreword %></p>
+        <% end %>
+      <% else %>
+        <% Article.tagged_with(category).take(2).each do |article| %>
+          <h4 class="mt-2"><%= link_to "#{article.title}", article_path(article), class:"title-name" %></h4>
+          <p class="pr-3"><%= article.foreword %></p>
+        <% end %>
+      <% end %>
+      <% if Article.tagged_with(category).length > 1 %>
+        <div class="text-right mr-3">
+          <%= link_to "+ D'ARTICLES",  articles_path(category: category.name), class:"btn btn-primary carousel-btn" %>
+        </div>
+      <% end %>
+      <hr>
+    </div>
+  <% end %>
 </div>

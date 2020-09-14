@@ -10,6 +10,32 @@ a {
   }
 }
 
+.homepage-articles-container {
+  margin-top: 60px;
+
+  .home-category-articles {
+    a.category-name {
+      color: $pink;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: bold;
+      font-family: $headers-font;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+
+    a.title-name {
+      color: $purple;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+}
 
 .return-btn {
   font-size: 0.8rem;
@@ -106,8 +132,16 @@ a {
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {
+   .article-text {
+    h1 {
+      text-align: center;
+    }
+    p {
+      display: none;
+    }
+  }
 }
-@media (max-width: 576px) {
+@media (max-width: 576px), (max-height: 812px) {
   .slick-prev {
     display: none !important;
   }
