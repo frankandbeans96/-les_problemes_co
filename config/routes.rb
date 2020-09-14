@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'articles#index'
+  root to: 'pages#home'
   resources :articles
 
   get '/manifeste', to: 'pages#manifeste', as: :manifeste
   get '/contact', to: 'pages#contact', as: :contact
-  get '/home', to: 'pages#home', as: :home
 
 
 

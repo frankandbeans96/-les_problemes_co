@@ -16,7 +16,7 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <% if !current_page?(home_path) %>
+    <% if !current_page?(root_path) %>
       <div class="container col-sm-12 col-md-9 col-lg-7">
     <% end %>
       <%= yield %>
