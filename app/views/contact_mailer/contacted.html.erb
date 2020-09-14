@@ -1,7 +1,8 @@
 <h1>Tu as reçu un nouveau message!</h1>
 
-<h6>De <%= @@contact.name %></h6>
-<h6>De <%= @@contact.email %></h6>
-<hr>
+<h6>De: <%= @contact.name %></h6>
+<h6>De: <%= @contact.email %></h6>
+
 <h6>Le contenu</h6>
+<hr>
 <p><%= @contact.message %></p>

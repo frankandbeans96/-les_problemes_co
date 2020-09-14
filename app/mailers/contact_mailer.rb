@@ -5,8 +5,8 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.contacted.subject
   #
-  def contacted
-    @user = params[:user] # Instance variable => available in view
+  def contacted(contact)
+    @contact = contact # Instance variable => available in view
     mail(to: "lesproblemesmag@gmail.com", subject: "Nouveau message d'un(e) fan")
   end
 end
