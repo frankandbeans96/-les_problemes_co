@@ -7,9 +7,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      ContactsMailer.general_message(@contact).deliver
+      # ContactsMailer.general_message(@contact).deliver
+      redirect_to root_path, notice: "Votre message a bien été envoyé, merci !"
     else
-      render :new, success: "Votre message a bien été envoyé"
+      render :new
     end
   end
 
