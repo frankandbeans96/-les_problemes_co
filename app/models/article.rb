@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   has_one_attached :photo
+  has_many :comments
   has_rich_text :rich_body
   acts_as_taggable_on :categories
 
