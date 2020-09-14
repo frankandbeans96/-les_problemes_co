@@ -30,7 +30,7 @@
           <p class="pr-3"><%= article.foreword %></p>
         <% end %>
       <% end %>
-      <% if Article.tagged_with(category).length > 1 %>
+      <% if Article.tagged_with(category).length > 2 %>
         <div class="text-right mr-3">
           <%= link_to "+ D'ARTICLES",  articles_path(category: category.name), class:"btn btn-primary carousel-btn" %>
         </div>
