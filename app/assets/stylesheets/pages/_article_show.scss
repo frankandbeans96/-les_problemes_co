@@ -80,6 +80,9 @@
 }
 
 .article-comments-index {
+  h4 {
+    color: $purple;
+  }
   .single-comment-container {
     display: flex;
   }

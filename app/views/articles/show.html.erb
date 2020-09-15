@@ -50,7 +50,7 @@
     <div class="article-comments-index mt-4">
       <h4>Commentaires:</h4>
       <hr>
-      <% @article.comments.each do |comment| %>
+      <% @article.comments.sort_by(&:created_at).reverse.each do |comment| %>
         <div class="single-comment-container">
           <div class="name-and-date-coms">
             <p><b><%= comment.name %></b></p>
