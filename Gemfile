@@ -35,6 +35,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'searchkick'
 gem 'rails-i18n'
 gem 'letter_opener', group: :development
 
