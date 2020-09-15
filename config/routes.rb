@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :articles do
-    resources :comments, only: [:new, :create, :destroy]
+    resources :comments, only: [:new, :create]
   end
 
-  resources :comments, only: :index
+  resources :comments, only: [:index, :destroy]
 
   resources :contacts, only: [:new, :create]
 
