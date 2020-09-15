@@ -70,3 +70,49 @@
     max-width: 40%;
   }
 }
+
+
+#comments-section {
+  h4 {
+    color: $purple;
+    margin: 3vh 0vh
+  }
+}
+
+.article-comments-index {
+  .single-comment-container {
+    display: flex;
+  }
+
+  .name-and-date-coms {
+    margin-right: 2vw;
+    width: 25%;
+    .text-muted {
+      font-size: 0.7rem;
+    }
+  }
+
+  .comment-text {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+  .article-comments-index  {
+    .single-comment-container {
+      display: block;
+    }
+    .name-and-date-coms {
+      width: 50%;
+    }
+    .comment-text {
+      width: 100%;
+    }
+  }
+}

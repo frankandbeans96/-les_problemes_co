@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment.article = @article
     if @comment.save
-      redirect_to article_path(params[:article_id]), notice: "Ton commentaire est en attente d'approbation"
+      redirect_to article_path(params[:article_id], anchor: "comments-section"), notice: "Ton commentaire est en attente d'approbation"
     else
-      redirect_to article_path(params[:article_id]), alert: "Le nom et le contenu est obligatoire pour valider le commentaire !"
+      redirect_to article_path(params[:article_id], anchor: "comments-section"), alert: "Le nom et le contenu est obligatoire pour valider le commentaire !"
     end
   end
 

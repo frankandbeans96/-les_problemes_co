@@ -2,5 +2,7 @@
   <%= f.input :name, label: "Nom et Prénom" %>
   <%= f.input :email, label: "Adresse email", hint: "Adresse strictement confidentielle" %>
   <%= f.input :comment, as: :text, label: "Votre commentaire" %>
-  <%= f.submit "PUBLIER", class:"btn btn-primary carousel-btn" %>
+  <div class="text-center">
+    <%= f.submit "PUBLIER", class:"btn btn-primary carousel-btn" %>
+  </div>
 <% end %>
