@@ -15,7 +15,13 @@
   <div class="col-sm-11 col-md-11 col-lg-10 mx-auto">
     <div class="coms-and-date">
       <p><i class="far fa-calendar"></i> <%= article.created_at.strftime('%d/%m/%Y')%> </p>
-      <p><i class="far fa-comment-alt"></i> Aucun commentaire</p>
+      <% if article.comments.select(&:approved).empty? %>
+        <p><i class="far fa-comment-alt"></i> Aucun commentaire</p>
+      <% elsif article.comments.select(&:approved).length == 1 %>
+        <p><i class="far fa-comment-alt"></i> 1 commentaire</p>
+      <% elsif article.comments.select(&:approved).length > 1 %>
+        <p><i class="far fa-comment-alt"></i> <%= article.comments.select(&:approved).count %> commentaires</p>
+      <% end %>
     </div>
     <p class="text-justify mt-3"><%= article.foreword %></p>
   </div>

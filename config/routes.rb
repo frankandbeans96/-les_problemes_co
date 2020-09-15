@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
-  resources :comments, only: [:index, :destroy]
+  resources :comments, only: [:index, :destroy] do
+    member do
+      post :approve
+      post :ban
+    end
+  end
 
   resources :contacts, only: [:new, :create]
 

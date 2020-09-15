@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @comment = Comment.new
     @article = Article.find(params[:article])
@@ -16,6 +18,18 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def approve
+    @comment = Comment.find(params[:id])
+    @comment.update(approved: true, banned: false)
+    redirect_to comments_path
+  end
+
+  def ban
+    @comment = Comment.find(params[:id])
+    @comment.update(banned: true, approved: false)
+    redirect_to comments_path
   end
 
   private
