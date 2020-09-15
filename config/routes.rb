@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :destroy]
   end
 
+  resources :comments, only: :index
+
   resources :contacts, only: [:new, :create]
 
   get '/manifeste', to: 'pages#manifeste', as: :manifeste
