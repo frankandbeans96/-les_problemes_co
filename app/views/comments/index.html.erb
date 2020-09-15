@@ -1,0 +1,98 @@
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Commentaires en attente</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Commentaires bannis</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-comments-tab" data-toggle="pill" href="#pills-comments" role="tab" aria-controls="pills-comments" aria-selected="false">Tous les commentaires</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="article-comments-index mt-4">
+      <h4>Commentaires à approuver:</h4>
+      <hr>
+      <% Comment.all.select{|c| c.approved == false }.each do |comment| %>
+        <h6><%= link_to "#{comment.article.title}", article_path(comment.article) %>  </h6>
+        <div id="comment-index" class="single-comment-container">
+          <div class="name-and-date-coms">
+            <p><b><%= comment.name %></b></p>
+            <p class="text-muted"><i class="far fa-calendar"></i> <%= comment.created_at.strftime('%d/%m/%Y') %></p>
+          </div>
+          <div class="comment-text">
+            <p><i>"<%= comment.comment  %>"</i></p>
+          </div>
+          <div class="approval-section">
+            <%= link_to "Approve", approve_comment_path(comment), method: :post, remote: true, class:"badge badge-success"  %>
+            <%= link_to "Ban", ban_comment_path(comment), method: :post, remote: true, class:"badge badge-danger"  %>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="article-comments-index mt-4">
+      <h4>Commentaires bannis:</h4>
+      <hr>
+      <% Comment.all.select{|c| c.banned == true }.each do |comment| %>
+        <h6><%= link_to "#{comment.article.title}", article_path(comment.article) %>  </h6>
+        <div id="comment-index" class="single-comment-container">
+          <div class="name-and-date-coms">
+            <p><b><%= comment.name %></b></p>
+            <p class="text-muted"><i class="far fa-calendar"></i> <%= comment.created_at.strftime('%d/%m/%Y') %></p>
+            <span class="badge badge-pill badge-danger">BANNED</span>
+          </div>
+          <div class="comment-text">
+            <p><i>"<%= comment.comment  %>"</i></p>
+          </div>
+          <div class="approval-section">
+            <%= link_to "Approve", approve_comment_path(comment), method: :post, remote: true, class:"badge badge-success"  %>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="pills-comments" role="tabpanel" aria-labelledby="pills-comments-tab">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="article-comments-index mt-4">
+      <h4>Tous les commentaires:</h4>
+      <hr>
+      <% Comment.all.select{|c| c.banned == false }.each do |comment| %>
+        <h6><%= link_to "#{comment.article.title}", article_path(comment.article) %>  </h6>
+        <div id="comment-index" class="single-comment-container">
+          <div class="name-and-date-coms">
+            <p><b><%= comment.name %></b></p>
+            <p class="text-muted"><i class="far fa-calendar"></i> <%= comment.created_at.strftime('%d/%m/%Y') %></p>
+            <% if comment.approved == true %>
+              <span class="badge badge-pill badge-success">APPROVED</span>
+            <% elsif comment.approved == false %>
+              <span class="badge badge-pill badge-warning">TO BE APPROVED</span>
+            <% end %>
+          </div>
+          <div class="comment-text">
+            <p><i>"<%= comment.comment  %>"</i></p>
+          </div>
+          <div class="approval-section">
+            <%= link_to "Ban", ban_comment_path(comment), method: :post, remote: true, class:"badge badge-danger"  %>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
