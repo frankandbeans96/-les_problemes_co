@@ -46,11 +46,11 @@
     <h4>Ajouter un commentaire:</h4>
     <%= render 'shared/comments_form' %>
   </div>
-  <% if !@article.comments.empty? %>
+  <% if !@article.comments.select(&:approved).empty? %>
     <div class="article-comments-index mt-4">
       <h4>Commentaires:</h4>
       <hr>
-      <% @article.comments.sort_by(&:created_at).reverse.each do |comment| %>
+      <% @article.comments.select(&:approved).sort_by(&:created_at).reverse.each do |comment| %>
         <div class="single-comment-container">
           <div class="name-and-date-coms">
             <p><b><%= comment.name %></b></p>
@@ -63,6 +63,9 @@
         <hr>
       <% end %>
     </div>
+  <% else %>
+    <hr>
+    <h4 class="text-center mt-5">Pas encore de commentaire...</h4>
   <% end %>
 
 </div>
