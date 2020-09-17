@@ -22,6 +22,7 @@
       <li class="nav-item dropdown">
         <%= link_to "Articles", articles_path, class:"nav-link  dropdown-toggle", data: { toggle: "dropdown" }  %>
         <ul class="dropdown-menu dropdown-menu-right fade-up">
+          <li><%= link_to "Tous les articles", articles_path, class:"dropdown-item" %></li>
           <% categories =  Article.all.map(&:category_list).flatten.uniq %>
           <% categories.each do |category| %>
             <li><%= link_to "#{category.titleize}", articles_path(category: category), class:"dropdown-item" %></li>
