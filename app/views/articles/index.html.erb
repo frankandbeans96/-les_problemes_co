@@ -1,3 +1,14 @@
+<div class="container text-center mb-5 row d-flex flex-row">
+    <%= form_tag(articles_path, method: "get", class:"d-flex col-10") do %>
+      <div class="col-12">
+        <%= text_field_tag :query, params[:query], placeholder: "Rechercher article", class:"form-control form-control-md" %>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+      </div>
+    <% end %>
+</div>
+
 <% if params[:category].present? %>
   <div class="d-flex mx-auto mb-5">
     <h5 class="category-title mr-2">CATÉGORIE:</h5>
@@ -5,6 +16,7 @@
   </div>
 
 <% end %>
+
 
 <% @articles.each do |article| %>
 <div class="my-3">

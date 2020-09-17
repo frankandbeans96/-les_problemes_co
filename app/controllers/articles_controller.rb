@@ -4,11 +4,12 @@ class ArticlesController < ApplicationController
 
 
   def index
-    if params[:category].present?
-      @articles = Article.tagged_with(params[:category])
-    else
-      @articles = Article.all
-    end
+    query = params[:query].presence || "*"
+    conditions = {}
+    conditions[:category] = params[:category] if params[:category].present?
+
+    @articles = Article.search query, where: conditions
+
   end
 
   def show

@@ -6,7 +6,4 @@ class PagesController < ApplicationController
 
   def manifeste
   end
-
-  def home
-  end
 end
